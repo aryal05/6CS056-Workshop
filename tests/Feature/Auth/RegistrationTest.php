@@ -45,4 +45,5 @@ test('new users can register', function () {
 
     $user = User::where('email', 'test@example.com')->first();
     $response->assertRedirect(route('dashboard'));
+    $this->get(route('dashboard'))->assertOk();
 });
